@@ -15,7 +15,7 @@ TEST(HelloTest, VectorCheck) {
     ASSERT_EQ(x.size(), y.size()) << "Vectors initialised with unequal length";
 
     // Fill a vector in place
-    auto f = [](vector<int> &v, int max){
+    auto f = [](vector<int> &v, int max) {
         for (int i = 0; i < max; i++) {
             v.push_back(i);
         }
@@ -26,8 +26,8 @@ TEST(HelloTest, VectorCheck) {
     f(x, j);
     f(y, j);
 
-    ASSERT_EQ(x.size(), y.size()) << "Vectors after fill are of different length";
-
+    ASSERT_EQ(x.size(), y.size())
+        << "Vectors after fill are of different length";
 
     for (int i = 0; i < x.size(); i++) {
         EXPECT_EQ(x[i], y[i]);
@@ -35,7 +35,8 @@ TEST(HelloTest, VectorCheck) {
 
     // Uneven top up
     f(x, j);
-    f(y, j+1);
+    f(y, j + 1);
 
-    ASSERT_NE(x.size(), y.size()) << "Vectors filled by different amounts have same length";
+    ASSERT_NE(x.size(), y.size())
+        << "Vectors filled by different amounts have same length";
 }
