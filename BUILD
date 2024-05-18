@@ -11,3 +11,10 @@ cc_test(
     srcs = ["factorial_test.cc", "factorial.h"],
     deps = ["@com_google_googletest//:gtest_main"],
 )
+
+cc_test(
+    name = "queue_test",
+    size = "small",
+    srcs = ["queue.h", "queue.cc", "queue_test.cc"],
+    deps = ["@com_google_googletest//:gtest_main"],
+)
