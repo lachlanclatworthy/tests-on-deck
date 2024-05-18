@@ -4,6 +4,7 @@ from os import system
 
 tests = [
         "hello_test",
+        "factorial_test",
 ]
 
 # //:test_1 ....
