@@ -30,9 +30,13 @@ public:
         return text[position];
     }
 
+    // See Item 3
+    // Avoid duplication for the non-const member function by casting the calling object
+    // to const then casting the return value back to a writable ref
     char& operator[](std::size_t position) {
-        return text[position];
+        return const_cast<char&>(static_cast<const TextBlock&>(*this)[position]);
     }
+
 private:
     std::string text;
 };
